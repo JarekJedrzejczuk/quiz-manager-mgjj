@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="common" template="/WEB-INF/layouts/classic.jsp">
+		<put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
+	</definition>
+	<definition name="index" extends="common">
+		<put-attribute name="title" value="QuizManager" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+		<put-attribute name="current" value="index" />
+	</definition>
+
+	<definition name="users" extends="common">
+		<put-attribute name="title" value="QuizManager" />
+		<put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
+		<put-attribute name="current" value="users" />
+	</definition>
+	
+	<definition name="user-detail" extends="common">
+		<put-attribute name="title" value="User Detail" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user-detail.jsp" />
+		<put-attribute name="current" value="users" />
+	</definition>
+
+	<definition name="user-register" extends="common">
+		<put-attribute name="title" value="User Registration" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user-register.jsp" />
+		<put-attribute name="current" value="register" />
+	</definition>
+	<definition name="login" extends="common">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+		<put-attribute name="current" value="login" />
+	</definition>
+	<definition name="podejscia" extends="common">
+		<put-attribute name="title" value="podejscia" />
+		<put-attribute name="body" value="/WEB-INF/jsp/podejscia.jsp" />
+		<put-attribute name="current" value="podejscia" />
+	</definition>
+	<definition name="podejscie-wykonaj" extends="common">
+		<put-attribute name="title" value="podejscia" />
+		<put-attribute name="body" value="/WEB-INF/jsp/podejscie-wykonaj.jsp" />
+		<put-attribute name="current" value="podejscia" />
+	</definition>
+	<definition name="pytania" extends="common">
+		<put-attribute name="title" value="pytania" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pytania.jsp" />
+		<put-attribute name="current" value="pytania" />
+	</definition>
+	<definition name="kategorie" extends="common">
+		<put-attribute name="title" value="kategorie" />
+		<put-attribute name="body" value="/WEB-INF/jsp/kategorie.jsp" />
+		<put-attribute name="current" value="kategorie" />
+	</definition>
+	<definition name="kategorie-dodaj-uzytkownika" extends="common">
+		<put-attribute name="title" value="kategorie" />
+		<put-attribute name="body" value="/WEB-INF/jsp/kategorie-dodaj-uzytkownika.jsp" />
+		<put-attribute name="current" value="kategorie" />
+	</definition>
+	<definition name="kategorie-wyswietl" extends="common">
+		<put-attribute name="title" value="kategorie" />
+		<put-attribute name="body" value="/WEB-INF/jsp/kategorie-wyswietl.jsp" />
+		<put-attribute name="current" value="kategorie" />
+	</definition>
+	<definition name="kategorie-wprowadz" extends="common">
+		<put-attribute name="title" value="kategorie" />
+		<put-attribute name="body" value="/WEB-INF/jsp/kategorie-wprowadz.jsp" />
+		<put-attribute name="current" value="kategorie" />
+	</definition>
+	<definition name="grupy" extends="common">
+		<put-attribute name="title" value="grupy" />
+		<put-attribute name="body" value="/WEB-INF/jsp/grupy.jsp" />
+		<put-attribute name="current" value="grupy" />
+	</definition>
+	<definition name="quizy" extends="common">
+		<put-attribute name="title" value="quizy" />
+		<put-attribute name="body" value="/WEB-INF/jsp/quizy.jsp" />
+		<put-attribute name="current" value="quizy" />
+	</definition>
+	<definition name="quizy-wprowadz" extends="common">
+		<put-attribute name="title" value="quizy" />
+		<put-attribute name="body" value="/WEB-INF/jsp/quizy-wprowadz.jsp" />
+		<put-attribute name="current" value="quizy" />
+	</definition>
+	<definition name="quizy-wyswietl" extends="common">
+		<put-attribute name="title" value="quizy" />
+		<put-attribute name="body" value="/WEB-INF/jsp/quizy-wyswietl.jsp" />
+		<put-attribute name="current" value="quizy" />
+	</definition>
+	<definition name="quizy-dodaj-pytania" extends="common">
+		<put-attribute name="title" value="quizy" />
+		<put-attribute name="body" value="/WEB-INF/jsp/quizy-dodaj-pytania.jsp" />
+		<put-attribute name="current" value="quizy" />
+	</definition>
+	
+	<definition name="account" extends="common">
+		<put-attribute name="title" value="User account" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user-account.jsp" />
+		<put-attribute name="current" value="account" />
+	</definition>
+	<definition name="pytania-wprowadz" extends="common">
+		<put-attribute name="title" value="Wprowadzanie pytań" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pytania-wprowadz.jsp" />
+		<put-attribute name="current" value="pytania" />
+	</definition>
+	<definition name="pytania-wyswietl" extends="common">
+		<put-attribute name="title" value="wyswietlanie pytań" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pytania-wyswietl.jsp" />
+		<put-attribute name="current" value="pytania" />
+	</definition>
+	<definition name="odpowiedzi-wprowadz" extends="common">
+		<put-attribute name="title" value="Wprowadzanie pytań" />
+		<put-attribute name="body" value="/WEB-INF/jsp/odpowiedzi-wprowadz.jsp" />
+		<put-attribute name="current" value="pytania" />
+	</definition>
+
+</tiles-definitions>
