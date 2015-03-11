@@ -21,7 +21,7 @@
 	
 	<authentication-manager>
 		<authentication-provider>
- 			<password-encoder hash="bcrypt"/>
+<!--  			<password-encoder hash="bcrypt"/> -->
 			<jdbc-user-service data-source-ref="dataSource"
 				authorities-by-username-query=" select uzytkownik.login, role.name from uzytkownik
 											join uzytkownik_role on uzytkownik.uzytkownik_id = uzytkownik_role.users_uzytkownik_id
