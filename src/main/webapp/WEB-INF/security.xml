@@ -12,7 +12,7 @@
 		<intercept-url pattern="/kategorie**" access="hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/pytani**" access="hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/odpowiedz**" access="hasRole('EGZAMINATOR')" />
-		<intercept-url pattern="/quizy**" access="hasRole('EGZAMINATOR')" />
+		<intercept-url pattern="/quizy**" access="hasRole('UCZESTNIK')" />
 		<intercept-url pattern="/Podejscia**" access="hasRole('UCZESTNIK')" />
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/login.html"/>
