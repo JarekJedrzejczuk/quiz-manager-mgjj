@@ -9,5 +9,6 @@
 		<class>pl.agh.jj.jba.entities.Quiz</class>
 		<class>pl.agh.jj.jba.entities.Role</class>
 		<class>pl.agh.jj.jba.entities.User</class>
+		<class>pl.agh.jj.jba.entities.Kategoria_uczestnikow</class>
 	</persistence-unit>
 </persistence>

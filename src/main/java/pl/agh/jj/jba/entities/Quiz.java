@@ -10,8 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="quiz")
 public class Quiz {
 	@Id
 	@GeneratedValue
