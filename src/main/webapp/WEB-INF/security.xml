@@ -12,7 +12,7 @@
 		<intercept-url pattern="/kategorie**" access="hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/pytani**" access="hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/odpowiedz**" access="hasRole('EGZAMINATOR')" />
-		<intercept-url pattern="/quizy**" access="hasRole('UCZESTNIK')" />
+		<intercept-url pattern="/quizy**" access="hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/Podejscia**" access="hasRole('UCZESTNIK')" />
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/login.html"/>
@@ -23,9 +23,9 @@
 		<authentication-provider>
  			<password-encoder hash="bcrypt"/>
 			<jdbc-user-service data-source-ref="dataSource"
-				authorities-by-username-query="select qm1.uzytkownik.login, qm1.Role.name from qm1.uzytkownik
-											join qm1.uzytkownik_Role on qm1.uzytkownik.uzytkownik_id = qm1.uzytkownik_Role.users_uzytkownik_id
-											join qm1.Role on qm1.uzytkownik_Role.roles_id = qm1.Role.id
+				authorities-by-username-query="select qm1.uzytkownik.login, qm1.role.name from qm1.uzytkownik
+											join qm1.uzytkownik_role on qm1.uzytkownik.uzytkownik_id = qm1.uzytkownik_role.users_uzytkownik_id
+											join qm1.role on qm1.uzytkownik_role.roles_id = qm1.role.id
 											where qm1.uzytkownik.login = ?"
 				users-by-username-query="select login 'name', haslo 'password',1 'enable' from qm1.uzytkownik where login = ?" />
 		</authentication-provider>
