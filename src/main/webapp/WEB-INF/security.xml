@@ -23,11 +23,11 @@
 		<authentication-provider>
  			<password-encoder hash="bcrypt"/>
 			<jdbc-user-service data-source-ref="dataSource"
-				authorities-by-username-query="select qm1.uzytkownik.login, qm1.role.name from qm1.uzytkownik
-											join qm1.uzytkownik_role on qm1.uzytkownik.uzytkownik_id = qm1.uzytkownik_role.users_uzytkownik_id
-											join qm1.role on qm1.uzytkownik_role.roles_id = qm1.role.id
-											where qm1.uzytkownik.login = ?"
-				users-by-username-query="select login 'name', haslo 'password',enable from qm1.uzytkownik where login = ?" />
+				authorities-by-username-query="select qm2.uzytkownik.login, qm2.role.name from qm2.uzytkownik
+											join qm2.uzytkownik_role on qm2.uzytkownik.uzytkownik_id = qm2.uzytkownik_role.users_uzytkownik_id
+											join qm2.role on qm2.uzytkownik_role.roles_id = qm2.role.id
+											where qm2.uzytkownik.login = ?"
+				users-by-username-query="select login 'name', haslo 'password',enable from qm2.uzytkownik where login = ?" />
 		</authentication-provider>
 	</authentication-manager>
 	
