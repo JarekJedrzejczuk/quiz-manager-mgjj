@@ -27,7 +27,7 @@
 											join qm2.uzytkownik_role on qm2.uzytkownik.uzytkownik_id = qm2.uzytkownik_role.users_uzytkownik_id
 											join qm2.role on qm2.uzytkownik_role.roles_id = qm2.role.id
 											where qm2.uzytkownik.login = ?"
-				users-by-username-query="select login 'name', haslo 'password',enable from qm2.uzytkownik where login = ?" />
+				users-by-username-query="select login 'name', haslo 'password',enabled 'enable' from qm2.uzytkownik where login = ?" />
 		</authentication-provider>
 	</authentication-manager>
 	

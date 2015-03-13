@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table (name="kategoira")
+@Table (name="kategoria")
 public class Kategoria {
 	@Id
 	@GeneratedValue
