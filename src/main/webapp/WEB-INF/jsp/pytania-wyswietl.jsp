@@ -15,7 +15,7 @@ $(document).ready(function() {
 <a href="<spring:url value="/pytania-wprowadz.html" />" class="btn btn-lg btn-primary" >
 							Wprowadz pytanie
 						</a>
-<table class="table table-bordered table-hover table-striped" data-sort-name="ID" data-sort-order="desc">
+<table class="table table-bordered table-hover table-striped" data-url="data1.json" data-height="299"  data-sort-name="ID" data-sort-order="desc">
 	<thead>
 		<tr>
 			<th data-field="ID" data-align="right" data-sortable="true">ID</th>
@@ -24,6 +24,7 @@ $(document).ready(function() {
 			<th>Maksymalna ilość punktów</th>
 			<th>poprawna odpowiedz</th>
 			<th>Informacja zwrotna</th>
+			<th>Usuwanie</th>
 		</tr>
 	</thead>
 	<tbody>
