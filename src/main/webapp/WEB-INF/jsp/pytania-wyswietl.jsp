@@ -18,7 +18,7 @@ $(document).ready(function() {
 <table class="table table-bordered table-hover table-striped" data-sort-name="ID" data-sort-order="desc">
 	<thead>
 		<tr>
-			<th>ID</th>
+			<th data-field="id" >ID</th>
 			<th>nazwa pytania</th>
 			<th>tresc pytania</th>
 			<th>Maksymalna ilość punktów</th>
@@ -36,15 +36,6 @@ $(document).ready(function() {
 				</td>
 				<td>
 						<c:out value="${pyt.nazwaPytania}" />
-				</td>
-				<td>
-						<c:out value="${pyt.trescPytania}" />
-				</td>
-				<td>
-						<c:out value="${pyt.trescPytania}" />
-				</td>
-				<td>
-						<c:out value="${pyt.trescPytania}" />
 				</td>
 				<td>
 						<c:out value="${pyt.trescPytania}" />
