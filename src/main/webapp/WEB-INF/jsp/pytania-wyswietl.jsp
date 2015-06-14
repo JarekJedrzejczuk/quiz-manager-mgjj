@@ -15,7 +15,7 @@ $(document).ready(function() {
 <a href="<spring:url value="/pytania-wprowadz.html" />" class="btn btn-lg btn-primary" >
 							Wprowadz pytanie
 						</a>
-<table class="table table-bordered table-hover table-striped">
+<table class="table table-bordered table-hover table-striped" data-sort-name="name" data-sort-order="desc">
 	<thead>
 		<tr>
 			<th>ID</th>

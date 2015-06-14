@@ -40,7 +40,6 @@
 	
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="dataSource" ref="dataSource" />
-		
 	</bean>
 	
 	<jpa:repositories base-package="pl.agh.jj.jba.repository"/>
