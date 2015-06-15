@@ -16,7 +16,7 @@ $(document).ready(function() {
 							Wprowadz pytanie
 </a>
 
-<table class="table table-bordered table-hover table-striped" data-sort-name="${pytanie}" data-sort-order="desc">
+<table class="table table-bordered table-hover table-striped" data-url="${pytanie}" data-sort-name="ID" data-sort-order="desc">
 	<thead>
 		<tr>
 			<th>ID</th>
