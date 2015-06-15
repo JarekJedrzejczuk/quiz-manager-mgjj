@@ -14,11 +14,12 @@ $(document).ready(function() {
 </script>
 <a href="<spring:url value="/pytania-wprowadz.html" />" class="btn btn-lg btn-primary" >
 							Wprowadz pytanie
-						</a>
-<table class="table table-bordered table-hover table-striped" data-url="data1.json" data-height="299"  data-sort-name="ID" data-sort-order="desc">
+</a>
+
+<table class="table table-bordered table-hover table-striped" data-sort-name="${pytanie}" data-sort-order="desc">
 	<thead>
 		<tr>
-			<th data-field="ID" data-align="right" data-sortable="true">ID</th>
+			<th>ID</th>
 			<th>nazwa pytania</th>
 			<th>tresc pytania</th>
 			<th>Maksymalna ilość punktów</th>
@@ -27,36 +28,37 @@ $(document).ready(function() {
 			<th>Usuwanie</th>
 		</tr>
 	</thead>
-	<tbody>
-		<c:forEach items="${pytanie}" var="pyt">
-			<tr>
-				<td>
-					<a href="<spring:url value="/pytania/${pyt.pytanie_id}.html" />">
-						<c:out value="${pyt.pytanie_id}" />
-					</a>
-				</td>
-				<td>
-						<c:out value="${pyt.nazwaPytania}" />
-				</td>
-				<td>
-						<c:out value="${pyt.trescPytania}" />
-				</td>
-				<td>
-						<c:out value="${pyt.maxIloscPunktow}" />
-				</td>
-				<td>
-						<c:out value="${pyt.poprawnaOdpowiedz}" />
-				</td>
-				<td>
-						<c:out value="${pyt.informacjaZwrotna}" />
-				</td>
-				<td>
-						<a href="<spring:url value="/pytania/remove/${pyt.pytanie_id}.html" />" class="btn btn-danger triggerRemove" data-toggle="modal" data-target="#modalRemove">
-							Usuń
-						</a>
-				</td>
-			</tr>
-		</c:forEach>
+<!-- 	<tbody> -->
+<%-- 		<c:forEach items="${pytanie}" var="pyt"> --%>
+<!-- 			<tr> -->
+<!-- 				<td> -->
+<%-- 					<a href="<spring:url value="/pytania/${pyt.pytanie_id}.html" />"> --%>
+<%-- 						<c:out value="${pyt.pytanie_id}" /> --%>
+<!-- 					</a> -->
+<!-- 				</td> -->
+<!-- 				<td> -->
+<%-- 						<c:out value="${pyt.nazwaPytania}" /> --%>
+<!-- 				</td> -->
+<!-- 				<td> -->
+<%-- 						<c:out value="${pyt.trescPytania}" /> --%>
+<!-- 				</td> -->
+<!-- 				</td> -->
+<!-- 				<td> -->
+<%-- 						<c:out value="${pyt.maxIloscPunktow}" /> --%>
+<!-- 				</td> -->
+<!-- 				<td> -->
+<%-- 						<c:out value="${pyt.poprawnaOdpowiedz}" /> --%>
+<!-- 				</td> -->
+<!-- 				<td> -->
+<%-- 						<c:out value="${pyt.informacjaZwrotna}" /> --%>
+<!-- 				</td> -->
+<!-- 				<td> -->
+<%-- 						<a href="<spring:url value="/pytania/remove/${pyt.pytanie_id}.html" />" class="btn btn-danger triggerRemove" data-toggle="modal" data-target="#modalRemove"> --%>
+<!-- 							Usuń -->
+<!-- 						</a> -->
+<!-- 				</td> -->
+<!-- 			</tr> -->
+<%-- 		</c:forEach> --%>
 	</tbody>
 </table>
 
