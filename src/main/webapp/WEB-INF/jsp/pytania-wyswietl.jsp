@@ -62,13 +62,15 @@ $(document).ready(function() {
 </table>
 
 <form:form commandName="pytanie" cssClass="form-horizontal registrationForm">
-	<div class="form-group">
-		<label for="trescPytania" class ="col-sm-2 control-label" >Wprowadź treść pytania </label>
-		   <div class="col-sm-10">
-		   		<form:input path="trescPytania" cssClass="form-control" value="${pytanie.trescPytania}" />
-		   		<form:errors path="trescPytania"/>
-		   </div>
-	</div>
+	<c:forEach items="${pytanie}" var="pyt">
+		<div class="form-group">
+			<label for="trescPytania" class ="col-sm-2 control-label" >Wprowadź treść pytania </label>
+			   <div class="col-sm-10">
+			   		<form:input path="trescPytania" cssClass="form-control" value="${pytanie.trescPytania}" />
+			   		<form:errors path="trescPytania"/>
+			   </div>
+		</div>
+	</c:forEach>
 </form:form>
 
 <!--  Modal  -->
