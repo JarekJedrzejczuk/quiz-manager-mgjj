@@ -16,6 +16,20 @@ $(document).ready(function() {
 							Wprowadz pytanie
 </a>
 
+<c:forEach items="${pytanie}" var="pyt">
+	<form:form commandName="pyt"
+		cssClass="form-horizontal registrationForm">
+		<div class="form-group">
+			<label for="trescPytania" class="col-sm-2 control-label">Wprowadź
+				treść pytania </label>
+			<div class="col-sm-10">
+				<form:input path="trescPytania" cssClass="form-control"
+					value="${pyt.trescPytania}" />
+				<form:errors path="trescPytania" />
+			</div>
+		</div>
+	</form:form>
+</c:forEach>
 <table class="table table-bordered table-hover table-striped" data-sort-name="ID" data-sort-order="desc">
 	<thead>
 		<tr>
@@ -60,19 +74,6 @@ $(document).ready(function() {
 		</c:forEach>
 	</tbody>
 </table>
-
-
-	<c:forEach items="${pytanie}" var="pyt">
-<form:form commandName="pyt" cssClass="form-horizontal registrationForm">
-		<div class="form-group">
-			<label for="trescPytania" class ="col-sm-2 control-label" >Wprowadź treść pytania </label>
-			   <div class="col-sm-10">
-			   		<form:input path="trescPytania" cssClass="form-control" value="${pyt.trescPytania}" />
-			   		<form:errors path="trescPytania"/>
-			   </div>
-		</div>
-</form:form>
-	</c:forEach>
 
 
 <!--  Modal  -->
