@@ -110,11 +110,6 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/pytania-wyswietl.jsp" />
 		<put-attribute name="current" value="pytania" />
 	</definition>
-		<definition name="pytania-edytuj" extends="common">
-		<put-attribute name="title" value="edycja pytań" />
-		<put-attribute name="body" value="/WEB-INF/jsp/pytania-edytuj.jsp" />
-		<put-attribute name="current" value="pytania" />
-	</definition>
 	<definition name="odpowiedzi-wprowadz" extends="common">
 		<put-attribute name="title" value="Wprowadzanie pytań" />
 		<put-attribute name="body" value="/WEB-INF/jsp/odpowiedzi-wprowadz.jsp" />

@@ -16,6 +16,9 @@ import pl.agh.jj.jba.entities.Pytanie;
 import pl.agh.jj.jba.services.OdpowiedziService;
 import pl.agh.jj.jba.services.PytaniaService;
 
+
+
+
 @Controller
 public class PytaniaController {
 	@Autowired
@@ -105,11 +108,7 @@ public class PytaniaController {
 		odpowiedzi.clear();
 		return "redirect:/pytania-wyswietl.html";
 	}
-	@RequestMapping(value="/pytania-edytuj/{id}.html")
-	public String	showEdytujPytania(Model model,@PathVariable Integer id){
-		model.addAttribute("pytanie", pytaniaService.findByID(id));
-		return "pytania-edytuj";
-	}
+
 	@RequestMapping(value="/pytania-wprowadz", method=RequestMethod.POST)
 	public String doWprowadzPytania(@ModelAttribute("pytanie") Pytanie pytanie){
 		lastPytanie=new Pytanie();
