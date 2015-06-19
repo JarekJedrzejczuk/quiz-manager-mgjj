@@ -7,7 +7,7 @@
 		<div class="alert alert-success">Rejestracja zakończyła się powodzeniem! Witamy w systemie!!!</div>
 	</c:if>
 	<div class="form-group">
-		<label for="name" class ="col-sm-2 control-label" >Name: </label>
+		<label for="name" class ="col-sm-2 control-label" >Login: </label>
 		   <div class="col-sm-10">
 		   		<form:input path="name" cssClass="form-control"/>
 		   		<form:errors path="name"/>
@@ -21,27 +21,27 @@
 		   </div>
 	</div>
 	<div class="form-group">
-		<label for="name" class ="col-sm-2 control-label" >hasło </label>
+		<label for="name" class ="col-sm-2 control-label" >Hasło </label>
 		   <div class="col-sm-10">
 		   		<form:password path="password" cssClass="form-control"/>
 		   		<form:errors path="password"/>
 		   </div>
 	</div>
 	<div class="form-group">
-		<label for="name" class ="col-sm-2 control-label" >wprowadź hasło jeszcze raz </label>
+		<label for="name" class ="col-sm-2 control-label" >Wprowadź hasło jeszcze raz </label>
 		   <div class="col-sm-10">
 		   		<input type="password" name="password_again" is="password_again" class = "form-control"/>
 		   </div>
 	</div>
 	<div class="form-group">
-		<label for="name" class ="col-sm-2 control-label" >imie </label>
+		<label for="name" class ="col-sm-2 control-label" >Imię </label>
 		   <div class="col-sm-10">
 		   		<form:input path="imie" cssClass="form-control"/>
 		   		<form:errors path="imie"/>
 		   </div>
 	</div>
 	<div class="form-group">
-		<label for="name" class ="col-sm-2 control-label" >nazwisko </label>
+		<label for="name" class ="col-sm-2 control-label" >Nazwisko </label>
 		   <div class="col-sm-10">
 		   		<form:input path="nazwisko" cssClass="form-control"/>
 		   		<form:errors path="nazwisko"/>
@@ -55,7 +55,7 @@
 		   </div>
 	</div>
 	<div class="form-group">
-		<label for="name" class ="col-sm-2 control-label" >instytucja </label>
+		<label for="name" class ="col-sm-2 control-label" >Instytucja </label>
 		   <div class="col-sm-10">
 		   		<form:input path="instytucja" cssClass="form-control"/>
 		   		<form:errors path="instytucja"/>
