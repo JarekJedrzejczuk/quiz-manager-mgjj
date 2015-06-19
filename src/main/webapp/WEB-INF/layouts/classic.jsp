@@ -48,34 +48,34 @@
 					<ul class="nav navbar-nav">
 						<security:authorize access="hasRole('ROLE_ADMIN')">
 							<li class="${current == 'users' ? 'active' : ''}"><a
-								href='<spring:url value="/users.html"/>'>users</a></li>
+								href='<spring:url value="/users.html"/>'>Użytkownicy</a></li>
 						</security:authorize>
 						<security:authorize access="hasRole('EGZAMINATOR')">
 							<li class="${current == 'users' ? 'active' : ''}"><a
-								href='<spring:url value="/users.html"/>'>users</a></li>
+								href='<spring:url value="/users.html"/>'>Użytkownicy</a></li>
 							<li class="${current == 'grupy' ? 'active' : ''}"><a
-								href='<spring:url value="/grupy.html"/>'>grupy</a></li>
+								href='<spring:url value="/grupy.html"/>'>Grupy</a></li>
 							<li class="${current == 'kategorie' ? 'active' : ''}"><a
-								href='<spring:url value="/kategorie-wyswietl.html"/>'>kategorie</a></li>
+								href='<spring:url value="/kategorie-wyswietl.html"/>'>Kategorie</a></li>
 							<li class="${current == 'quizy' ? 'active' : ''}"><a
-								href='<spring:url value="/quizy-wyswietl.html"/>'>quizy</a></li>
+								href='<spring:url value="/quizy-wyswietl.html"/>'>Quizy</a></li>
 							<li class="${current == 'pytania' ? 'active' : ''}"><a
-								href='<spring:url value="/pytania-wyswietl.html"/>'>pytania</a></li>
+								href='<spring:url value="/pytania-wyswietl.html"/>'>Pytania</a></li>
 						</security:authorize>
 						<security:authorize access="hasRole('UCZESTNIK')">
 							<li class="${current == 'podejscia' ? 'active' : ''}"><a
-								href='<spring:url value="/podejscia.html"/>'>podejscia</a></li>
+								href='<spring:url value="/podejscia.html"/>'>Podejscia</a></li>
 						</security:authorize>
 
 						<security:authorize access="! isAuthenticated()">
 							<li class="${current == 'user-register' ? 'active' : ''}"><a
-								href='<spring:url value="/register.html"/>'>register</a></li>
+								href='<spring:url value="/register.html"/>'>Zarejestruj</a></li>
 							<li class="${current == 'login' ? 'active' : ''}"><a
-								href='<spring:url value="/login.html"/>'>login</a></li>
+								href='<spring:url value="/login.html"/>'>Zaloguj</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
 <%-- 							<li class="${current == 'account' ? 'active' : ''}"><a href="<spring:url value="/account.html" />">My account</a></li> --%>
-							<li><a href="<spring:url value="/logout"/>">logout</a></li>
+							<li><a href="<spring:url value="/logout"/>">Wyloguj</a></li>
 						</security:authorize>
 					</ul>
 					

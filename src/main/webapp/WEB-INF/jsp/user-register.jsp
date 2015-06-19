@@ -66,7 +66,7 @@
 	<div class="form-group">
 		<label for="name" class ="col-sm-2 control-label" ></label>
 		   <div class="col-sm-2">
-		   		<input type="submit" value="Save" class="btn btn-lg btn-primary"/>
+		   		<input type="submit" value="Zapisz" class="btn btn-lg btn-primary"/>
 		   </div>
 	</div>
 </form:form>
