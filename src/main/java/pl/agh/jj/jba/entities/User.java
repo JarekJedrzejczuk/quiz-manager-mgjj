@@ -18,7 +18,6 @@ import org.hibernate.validator.constraints.Email;
 import pl.agh.jj.jba.annotation.UniqueUsername;
 
 
-
 @Entity
 @Table(name="uzytkownik")
 public class User {
@@ -29,12 +28,14 @@ public class User {
 	private Integer id;
 	
 	
+	
 	@Column(name="login",unique=true)
-	@UniqueUsername(message="Nazwa uï¿½ytkownika juï¿½ istnieje")
-	@Size(min=3,message="Login musi zawieraï¿½ conajmniej 3 znaki")
+	@UniqueUsername(message="Nazwa u¿ytkownika ju¿ istnieje")
+	@Size(min=3,message="Login musi zawieraæ co najmniej 3 znaki")
 	private String name;
-	@Size(min=1,message="Zï¿½y adres email")
-	@Email(message="Zï¿½y adres email")
+
+	@Size(min=1,message="Niepoprawny adres email")
+	@Email(message="Niepoprawny adres email")
 	private String email;
 	
 	@Column(name="haslo")
@@ -42,14 +43,20 @@ public class User {
 	private String password;
 	
 	private Integer iduzytkownik=1;
-	@Size(min=1, message="wpisz nazwisko")
+
+	@Size(min=1, message="Wpisz nazwisko")
 	private String nazwisko;
-	@Size(min=1, message="wpisz imie")
+
+	@Size(min=1, message="Wpisz imiê")
 	private String imie;
+
 	private String instytucja;
-	@Size(min=11,max=11, message="PESEL musi zawieraï¿½ 11 cyfr")
+
+	@Size(min=11,max=11, message="PESEL musi zawieraæ 11 cyfr")
 	private String pesel;
+
 	private String typ;
+
 	private String extrainfo;
 	
 	
