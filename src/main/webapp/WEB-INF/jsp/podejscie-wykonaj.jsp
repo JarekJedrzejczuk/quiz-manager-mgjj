@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../layouts/taglib.jsp"%>
-
-<%-- ${j=j+1} --%>
-
+<% int j=0; %>
 <form:form commandName="Tresc" cssClass="form-horizontal registrationForm">
 	<c:if test="${param.success eq true}">
 		<div class="alert alert-success">Zapisano odpowiedzi</div>
@@ -13,7 +11,8 @@
 		<thead></thead>
 	<tbody>
 		<c:forEach items="${Tresc.pytaniaTestowe}" var="p" varStatus="i">
-			<b><tr>Pytanie nr <c:out value="1"/>.:<c:out value="${p.tresc}"/></tr></b>
+			<% j=j+1; %>
+			<b><tr>Pytanie nr <c:out value="${j}"/>.: <c:out value="${p.tresc}"/></tr></b>
 				<c:forEach items="${p.odpowiedzi}" var="o" >
 					<div class="form-group">
 						<label for="pytaniaTestowe[${i.index}]" class ="col-sm-2 control-label" ></label>
