@@ -12,7 +12,7 @@
 	<tbody>
 		<c:forEach items="${Tresc.pytaniaTestowe}" var="p" varStatus="i">
 			<% j=j+1; %>
-			<b><tr>Pytanie nr <c:out value="${j}"/>.: <c:out value="${p.tresc}"/></tr></b>
+			<b><tr>Pytanie nr <c:out value="<%=j %>"/>.: <c:out value="${p.tresc}"/></tr></b>
 				<c:forEach items="${p.odpowiedzi}" var="o" >
 					<div class="form-group">
 						<label for="pytaniaTestowe[${i.index}]" class ="col-sm-2 control-label" ></label>
