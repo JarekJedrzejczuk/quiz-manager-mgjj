@@ -263,9 +263,9 @@
    <plugins>
      <plugin>
        <artifactId>maven-war-plugin</artifactId>
-       <version>2.2</version>
+       <version>2.4</version>
        <configuration>
-         <outputDirectory>ROOT</outputDirectory>
+         <outputDirectory>webapps</outputDirectory>
          <warName>ROOT</warName>
        </configuration>
      </plugin>
