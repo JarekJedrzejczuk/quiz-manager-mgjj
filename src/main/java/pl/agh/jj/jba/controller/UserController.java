@@ -29,11 +29,7 @@ public class UserController {
 	private UserService userService;
 	
 	@Autowired
-	private RoleRepository roleRepository;
-
-	private JpaRepository<Role, Integer> userRepository;
-	
-	
+	private RoleRepository roleRepository;	
 
 	@RequestMapping("/users")
 	public String	users(Model model, Principal principal){
@@ -44,7 +40,7 @@ public class UserController {
 	
 	@RequestMapping("/users/remove/{id}")
 	public String removeUser(@PathVariable Integer id){
-		userService.delete(id);
+		userService.delete(userService.findOne(id));
 		return "redirect:/users.html";
 	}
 	

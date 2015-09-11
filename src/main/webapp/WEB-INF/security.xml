@@ -11,10 +11,13 @@
 		<intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN') or hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/kategorie**" access="hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/pytani**" access="hasRole('EGZAMINATOR')" />
+		<intercept-url pattern="/pytani*/*" access="hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/odpowiedz**" access="hasRole('EGZAMINATOR')" />
-		<intercept-url pattern="/quizy**" access="hasRole('EGZAMINATOR')" />
+		<intercept-url pattern="/quiz*" access="hasRole('EGZAMINATOR')" />
+		<intercept-url pattern="/quiz*/*" access="hasRole('EGZAMINATOR')" />
 		<intercept-url pattern="/Podejscia**" access="hasRole('UCZESTNIK')" />
 		<intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/test/**" access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/login.html"/>
 		<logout logout-url="/logout" />
 	</http>

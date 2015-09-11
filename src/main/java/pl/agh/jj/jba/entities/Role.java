@@ -38,5 +38,8 @@ public class Role {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
+	public Boolean removeUser(User user){
+		return this.users.remove(user);
+	}
 
 }

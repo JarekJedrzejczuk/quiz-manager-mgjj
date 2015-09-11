@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,6 +33,8 @@ public class PytaniaController {
 	private Pytanie lastPytanie;
 		
 	private List<Odpowiedz> odpowiedzi=new ArrayList<Odpowiedz>();
+
+	private Pageable curentPageable;
 	
 	@ModelAttribute("lastPytanie")
 	public Pytanie getLastPytanie() {
@@ -43,7 +48,7 @@ public class PytaniaController {
 	@ModelAttribute("odpowiedzi_lista")
 	public List<Odpowiedz> getOdpowiedzi() {
 		return odpowiedzi;
-	}
+	} 
 
 	public void setOdpowiedzi(List<Odpowiedz> odpowiedzi) {
 		this.odpowiedzi = odpowiedzi;
@@ -82,9 +87,41 @@ public class PytaniaController {
 	}
 	
 	@RequestMapping("/pytania-wyswietl")
-	public String	showWyswietlPytania(Model model){
-		model.addAttribute("pytanie", pytaniaService.findAll());
+	public String	showWyswietlPytania(Model model, @PageableDefault(page = 0, value = 5) Pageable pageable){
+		curentPageable=pageable.first();
+		model.addAttribute("pytanie", pytaniaService.findAll(pageable.first()));
 		return "pytania-wyswietl";
+	}
+
+	@RequestMapping(value="/pytania/previous-page")
+	public String pytaniaWyswietlPreviousPage(Model model, @PageableDefault(page = 0, value = 5) Pageable pageable){
+		curentPageable=curentPageable.previousOrFirst();
+		model.addAttribute("pytanie",pytaniaService.findAll(curentPageable));
+		return "pytania-wyswietl";
+	}
+	
+	@RequestMapping(value="/pytania/next-page")
+	public String pytaniaWyswietlNextPage(Model model){
+		Pageable pageable=curentPageable.next();
+		curentPageable=pageable;
+		if(pageable.getOffset()==0){
+			pageable=curentPageable.first();
+			curentPageable=curentPageable.first();
+		}
+		
+		model.addAttribute("pytanie",pytaniaService.findAll(pageable));
+		return "pytania-wyswietl";
+	}
+	@RequestMapping("/pytania-edytuj/{id}")
+	public String	showEdytujPytanie(Model model, @PathVariable Integer id){
+		model.addAttribute("pytanie", pytaniaService.findByID(id));
+		return "pytania-edytuj";
+	}
+	
+	@RequestMapping(value="/pytania-edytuj/{id}", method=RequestMethod.POST)
+	public String doEdytujPytanie(@ModelAttribute("pytanie") Pytanie pytanie){
+		pytaniaService.save(pytanie);
+		return "redirect:/pytania-wyswietl.html";
 	}
 	
 	@RequestMapping(value="/odpowiedzi-wprowadz", method=RequestMethod.POST)
@@ -97,6 +134,7 @@ public class PytaniaController {
 		}
 		return "redirect:/odpowiedzi-wprowadz.html";
 	}
+	
 	@RequestMapping("/odpowiedzi-wprowadz-save")
 	public String doSaveOdpowiedziWith(Model model){
 		lastPytanie.setOdpowiedzi(odpowiedzi);
@@ -121,7 +159,7 @@ public class PytaniaController {
 	}
 	
 	@RequestMapping("/pytania/remove/{id}")
-	public String removeUser(@PathVariable Integer id){
+	public String removePyranie(@PathVariable Integer id){
 		pytaniaService.delete(id);
 		return "redirect:/pytania-wyswietl.html";
 	}

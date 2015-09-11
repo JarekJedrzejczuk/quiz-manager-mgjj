@@ -48,6 +48,7 @@
 			<th>imie i nazwisko</th>
 			<th>PESEL</th>
 			<th>instytucja</th>
+			<th>zaznacz</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -152,7 +153,7 @@
 		</c:forEach>
 	</tbody>
 </table>
-<a href="<spring:url value="/kategoria-save.html" />" class="btn btn-danger" data-toggle="modal" data-target="#modalRemove">
+<a href="<spring:url value="/kategoria-save.html" />" class="btn btn-danger" >
 							Zapisz kategorię w bazie danych
 						</a>
 	

@@ -12,10 +12,23 @@ $(document).ready(function() {
 	});
 });
 </script>
-<a href="<spring:url value="/pytania-wprowadz.html" />" class="btn btn-lg btn-primary" >
+<div class="btn-group" align="right">
+<a href="<spring:url value="/pytania-wprowadz.html" />" class="btn btn-primary" >
 							Wprowadz pytanie
 </a>
+</div>
 
+<div  align="center">
+<a href="<spring:url value="/pytania/previous-page.html" />" class="btn btn-primary btn-xs" >
+							&#8656 Poprzednia strona
+</a>
+<a href="<spring:url value="/pytania-wyswietl.html" />" class="btn btn-primary btn-xs"  >
+							Pierwsza strona 
+</a>
+<a href="<spring:url value="/pytania/next-page.html" />" class="btn btn-primary btn-xs" >
+							Nastepna strona &#x21d2
+</a>
+</div>
 <table class="table table-bordered table-hover table-striped" data-sort-name="ID" data-sort-order="desc">
 	<thead>
 		<tr>

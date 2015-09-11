@@ -26,11 +26,11 @@ $(document).ready(function() {
 			<th><b>Ostatni dzień udostępniania testu</b></th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody style="{height:50; overflow-x: scroll;}">
 		<c:forEach items="${quizyDoWyswietlenia}" var="q">
 			<tr>
 				<td>
-					<a href="<spring:url value="/quiz/${q.quiz_id}.html" />">
+					<a href="<spring:url value="/quiz-edytuj/${q.quiz_id}.html" />">
 						<c:out value="${q.quiz_id}" />
 					</a>
 				</td>
@@ -47,10 +47,10 @@ $(document).ready(function() {
 						<c:out value="${q.dostepnyOd}" />
 				</td>
 				<td>
-						<c:out value="${q.dostepnyOd}" />
+						<c:out value="${q.dostepnyDo}" />
 				</td>
 				<td>
-						<a href="<spring:url value="/quizy/remove/${q.quiz_id}.html" />" class="btn btn-danger triggerRemove" data-toggle="modal" data-target="#modalRemove">
+						<a href="<spring:url value="/quiz-remove/${q.quiz_id}.html" />" class="btn btn-danger triggerRemove" data-toggle="modal" data-target="#modalRemove">
 							Usuń
 						</a>
 				</td>

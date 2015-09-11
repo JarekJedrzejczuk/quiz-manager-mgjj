@@ -3,8 +3,8 @@ package pl.agh.jj.jba.entities;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
@@ -24,18 +24,16 @@ public class Quiz {
 	private Date dostepnyOd;
 	private Date dostepnyDo;
 	
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany
 	@JoinTable
 	private List<Pytanie> pytania;
 	
-	
-	@OneToMany(mappedBy="quiz")
+	@OneToMany(mappedBy="quiz", cascade=CascadeType.ALL)
 	private List<Kategoria> kategorie;
 	
-	@OneToMany(mappedBy="quiz")
+	@OneToMany(mappedBy="quiz", cascade=CascadeType.ALL)
 	private List<Podejscie> podejscie;
-	
-	
+
 	public List<Kategoria> getKategorie() {
 		return kategorie;
 	}
@@ -43,7 +41,6 @@ public class Quiz {
 		this.kategorie = kategorie;
 	}
 
-	
 	public Integer getQuiz_id() {
 		return quiz_id;
 	}
@@ -86,8 +83,45 @@ public class Quiz {
 	public void setPytania(List<Pytanie> pytania) {
 		this.pytania = pytania;
 	}
-	
-	
-	
+	public List<Podejscie> getPodejscie() {
+		return podejscie;
+	}
+	public void setPodejscie(List<Podejscie> podejscie) {
+		this.podejscie = podejscie;
+	}
+	/**
+	 * @param q
+	 * 
+	 * Metoda ustawia puste pola obiektu. Celem tej metody jest ułatwienie ogranieczenia wymainy informacji między widokiem a kontrolerem.
+	 * Chodzi o to, żeby nieużywane przez kontroler pola zostały przechowane w pamięci na serwerze.
+	 * 
+	 */
+	public void setNullFields(Quiz q){
+		if (this.dostepnyDo==null)
+			this.dostepnyDo=q.getDostepnyDo();
+		if (this.dostepnyOd==null)
+			this.dostepnyOd=q.getDostepnyOd();
+		if (this.losowaKolejnosc==null)
+			this.losowaKolejnosc=q.getLosowaKolejnosc();
+		if (this.kategorie==null)
+			this.kategorie=q.getKategorie();
+		if (this.limitCzasu==null)
+			this.limitCzasu=q.getLimitCzasu();
+		if (this.nazwa==null)
+			this.nazwa=q.getNazwa();
+		if (this.podejscie==null)
+			this.podejscie=q.getPodejscie();
+		if (this.pytania==null){
+			this.pytania=q.getPytania();
+			}
+	}
+	public Kategoria removeKategoria(Kategoria k){
+		return this.kategorie.remove(this.kategorie.lastIndexOf(k));
+		
+	}
+	public void deleteKategoria(Kategoria kategoriaDoUsuniecia) {
+		if (this.kategorie==null) return;
+		this.kategorie.remove(kategoriaDoUsuniecia);
+	}
 	
 }

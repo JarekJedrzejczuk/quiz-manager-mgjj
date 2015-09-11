@@ -1,7 +1,9 @@
 package pl.agh.jj.jba.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +16,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
+import org.springframework.data.annotation.Transient;
 
 import pl.agh.jj.jba.annotation.UniqueUsername;
 
@@ -30,8 +33,8 @@ public class User {
 	
 	
 	@Column(name="login",unique=true)
-	@UniqueUsername(message="Nazwa u¿ytkownika ju¿ istnieje")
-	@Size(min=3,message="Login musi zawieraæ co najmniej 3 znaki")
+	@UniqueUsername(message="Nazwa uï¿½ytkownika juï¿½ istnieje")
+	@Size(min=3,message="Login musi zawieraï¿½ co najmniej 3 znaki")
 	private String name;
 
 	@Size(min=1,message="Niepoprawny adres email")
@@ -47,12 +50,12 @@ public class User {
 	@Size(min=1, message="Wpisz nazwisko")
 	private String nazwisko;
 
-	@Size(min=1, message="Wpisz imiê")
+	@Size(min=1, message="Wpisz imiï¿½")
 	private String imie;
 
 	private String instytucja;
 
-	@Size(min=11,max=11, message="PESEL musi zawieraæ 11 cyfr")
+	@Size(min=11,max=11, message="PESEL musi zawieraï¿½ 11 cyfr")
 	private String pesel;
 
 	private String typ;
@@ -62,7 +65,7 @@ public class User {
 	
 	private boolean enabled;
 	
-	@OneToMany(fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinTable
 	private List<Podejscie> podejscia;
 
@@ -70,9 +73,20 @@ public class User {
 	@JoinTable
 	private List<Role> roles;	
 	
-	@ManyToMany(mappedBy="users")
+	@ManyToMany(mappedBy="users", cascade=CascadeType.ALL)
 	private List<Kategoria> kategorie;	
 	
+	@Transient
+	private Boolean czyZaznaczony;
+	
+	public Boolean getCzyZaznaczony() {
+		return czyZaznaczony;
+	}
+
+	public void setCzyZaznaczony(Boolean czyZaznaczony) {
+		this.czyZaznaczony = czyZaznaczony;
+	}
+
 	public List<Kategoria> getKategorie() {
 		return kategorie;
 	}
@@ -196,4 +210,21 @@ public class User {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	public Kategoria removeKategoria(Kategoria k){
+		return this.kategorie.remove(this.kategorie.lastIndexOf(k));
+	}
+	
+	public Boolean deleteKategoria(Kategoria k){
+		if (this.kategorie==null) return false;
+		return this.kategorie.remove(k);
+	}
+
+	public void addKategoria(Kategoria kategoriaDoDodania) {
+		if (this.kategorie==null){
+			this.kategorie=new ArrayList<Kategoria>();
+		}
+		this.kategorie.add(kategoriaDoDodania);
+	}
+	
 }

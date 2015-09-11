@@ -3,6 +3,7 @@ package pl.agh.jj.jba.entities;
 import java.util.Random;
 
 public class PytanieTestowe {
+	
 	private Pytanie pytanie;
 	private String tresc;
 	private String udzielonaOdpowiedz;
@@ -10,6 +11,7 @@ public class PytanieTestowe {
 	private Integer idxPrawidlowejOdp;
 	private Integer idxUdzielonejOdp;
 	private Integer zdobytePunkty;
+	
 	public PytanieTestowe(Pytanie p){
 		this.udzielonaOdpowiedz="@#$%^&*";
 		this.idxUdzielonejOdp=10000;
@@ -34,50 +36,60 @@ public class PytanieTestowe {
 		}
 		this.odpowiedzi=o;
 	}
+	
 	public Integer sprawdzOdpowiedz(Integer idx){
 		Integer wynik=0;
 		if(this.idxPrawidlowejOdp==idx)
 			wynik=pytanie.getMaxIloscPunktow();
 		return wynik;
 	}
+	
 	public Integer sprawdzOdpowiedz(String odp){
 		Integer wynik=0;
 		if(this.pytanie.getPoprawnaOdpowiedz()==odp)
 			wynik=pytanie.getMaxIloscPunktow();
 		return wynik;
 	}
+	
 	public Integer sprawdzOdpowiedz(Odpowiedz odp){
 		Integer wynik=0;
 		if(this.pytanie.getPoprawnaOdpowiedz()==odp.getTresc())
 			wynik=pytanie.getMaxIloscPunktow();
 		return wynik;
 	}
+	
 	public Pytanie getPytanie() {
 		return pytanie;
 	}
+	
 	public String getTresc() {
 		return tresc;
 	}
+	
 	public String[] getOdpowiedzi() {
 		return odpowiedzi;
 	}
+	
 	public Integer getIdxPrawidlowejOdp() {
 		return idxPrawidlowejOdp;
 	}
+	
 	public String getUdzielonaOdpowiedz() {
 		return udzielonaOdpowiedz;
 	}
+	
 	public void setUdzielonaOdpowiedz(String udzielonaOdpowiedz) {
 		if(udzielonaOdpowiedz==this.pytanie.getPoprawnaOdpowiedz()){
 			this.idxUdzielonejOdp=this.idxPrawidlowejOdp;
 			this.zdobytePunkty=this.pytanie.getMaxIloscPunktow();
-		}
-			
+		}		
 		this.udzielonaOdpowiedz = udzielonaOdpowiedz;
 	}
+	
 	public Integer getIdxUdzielonejOdp() {
 		return idxUdzielonejOdp;
 	}
+	
 	public void setIdxUdzielonejOdp(Integer idxUdzielonejOdp) {
 		if(this.idxPrawidlowejOdp==idxUdzielonejOdp){
 			this.udzielonaOdpowiedz=this.pytanie.getPoprawnaOdpowiedz();
@@ -85,6 +97,7 @@ public class PytanieTestowe {
 		}
 		this.idxUdzielonejOdp = idxUdzielonejOdp;
 	}
+	
 	public Integer getZdobytePunkty() {
 		if(this.zdobytePunkty==0){
 			if(this.idxPrawidlowejOdp==idxUdzielonejOdp){
@@ -97,6 +110,7 @@ public class PytanieTestowe {
 		}
 		return this.zdobytePunkty;
 	}
+	
 	public void setZdobytePunkty(Integer zdobytePunkty) {
 		this.zdobytePunkty = zdobytePunkty;
 	}

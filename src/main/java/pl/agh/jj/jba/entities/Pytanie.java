@@ -2,6 +2,7 @@ package pl.agh.jj.jba.entities;
 
 import java.util.List;
 
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table (name="pytanie")
@@ -33,6 +35,16 @@ public class Pytanie {
 	private List<Quiz> quizy;
 	
 	private String nazwaPytania;
+	
+	@Transient
+	private Boolean czyUsunac=false;
+	 
+	public Boolean getCzyUsunac() {
+		return czyUsunac;
+	}
+	public void setCzyUsunac(Boolean czyUsunac) {
+		this.czyUsunac = czyUsunac;
+	}
 	
 	public List<Quiz> getQuizy() {
 		return quizy;

@@ -64,9 +64,9 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/kategorie-wyswietl.jsp" />
 		<put-attribute name="current" value="kategorie" />
 	</definition>
-	<definition name="kategorie-wprowadz" extends="common">
+	<definition name="kategoria-wprowadz-edytuj" extends="common">
 		<put-attribute name="title" value="Kategorie" />
-		<put-attribute name="body" value="/WEB-INF/jsp/kategorie-wprowadz.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/kategoria-wprowadz-edytuj.jsp" />
 		<put-attribute name="current" value="kategorie" />
 	</definition>
 	<definition name="grupy" extends="common">
@@ -89,12 +89,22 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/quizy-wyswietl.jsp" />
 		<put-attribute name="current" value="quizy" />
 	</definition>
-	<definition name="quizy-dodaj-pytania" extends="common">
+	<definition name="quiz-dodaj-pytania" extends="common">
 		<put-attribute name="title" value="Quizy" />
-		<put-attribute name="body" value="/WEB-INF/jsp/quizy-dodaj-pytania.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/quiz-dodaj-pytania.jsp" />
 		<put-attribute name="current" value="quizy" />
 	</definition>
-	
+		<definition name="quiz-usun-pytania" extends="common">
+		<put-attribute name="title" value="Quizy-edycja-usuwanie-pytan" />
+		<put-attribute name="body" value="/WEB-INF/jsp/quiz-usun-pytania.jsp" />
+		<put-attribute name="current" value="quizy" />
+	</definition>
+	<definition name="quiz-edytuj" extends="common">
+		<put-attribute name="title" value="Quizy-edycja" />
+		<put-attribute name="body" value="/WEB-INF/jsp/quiz-edytuj.jsp" />
+		<put-attribute name="current" value="quizy" />
+	</definition>
+
 	<definition name="account" extends="common">
 		<put-attribute name="title" value="Konto użytkownika" />
 		<put-attribute name="body" value="/WEB-INF/jsp/user-account.jsp" />
@@ -110,10 +120,19 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/pytania-wyswietl.jsp" />
 		<put-attribute name="current" value="pytania" />
 	</definition>
+		<definition name="pytania-edytuj" extends="common">
+		<put-attribute name="title" value="Pytania-edycja" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pytania-edytuj.jsp" />
+		<put-attribute name="current" value="pytania" />
+	</definition>
 	<definition name="odpowiedzi-wprowadz" extends="common">
 		<put-attribute name="title" value="Wprowadzanie odpowiedzi" />
 		<put-attribute name="body" value="/WEB-INF/jsp/odpowiedzi-wprowadz.jsp" />
 		<put-attribute name="current" value="pytania" />
 	</definition>
-
+		<definition name="test" extends="common">
+		<put-attribute name="title" value="test" />
+		<put-attribute name="body" value="/WEB-INF/jsp/test.jsp" />
+		<put-attribute name="current" value="pytania" />
+	</definition>
 </tiles-definitions>

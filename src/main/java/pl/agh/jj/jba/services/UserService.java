@@ -103,8 +103,6 @@ public class UserService {
 
 		List<Role> roles = new ArrayList<Role>();
 		roles.add(roleRepository.findByName("UCZESTNIK"));
-//		roles.add(roleRepository.findByName("EGZAMINATOR"));
-//		roles.add(roleRepository.findByName("ROLE_ADMIN"));
 		user.setRoles(roles);
 
 		userRepository.save(user);
@@ -118,7 +116,25 @@ public class UserService {
 	}
 
 	public void delete(int id) {
+		
 		userRepository.delete(id);
+	}
+	public void delete(User u){
+		if(u.getRoles()!=null){
+			for(Role r: u.getRoles()){
+				r.removeUser(u);
+				roleRepository.save(r);
+				u.setRoles(null);
+			}
+		}
+		if(u.getKategorie()!=null){
+			for(Kategoria k: u.getKategorie()){
+				k.removeUser(u);
+				kategorieRepository.save(k);
+				u.setKategorie(null);
+			}
+		}
+		userRepository.delete(u.getId());
 	}
 
 	public User findOne(String username) {

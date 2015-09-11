@@ -19,23 +19,23 @@ $(document).ready(function() {
 	<thead>
 		<tr>
 			<th><b>ID</b></th>
-			<th><b>Nazwa quizu</b></th>
-			<th><b>Losowa kolejność pytań</b></th>
-			<th><b>Limit czasu</b></th>
-			<th><b>Data udostępnienia testu</b></th>
-			<th><b>Ostatni dzień udostępniania testu</b></th>
+			<th><b>Nazwa</b></th>
+			<th><b>Opis</b></th>
+			<th><b>Usuń</b></th>
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach items="${kategorieDoWyswietlenia}" var="q">
 			<tr>
 				<td>
-					<a href="<spring:url value="/kategorie/${q.kategoria_id}.html" />">
+					<a href="<spring:url value="/kategorie/kategoria-wprowadz-edytuj/${q.kategoria_id}.html" />">
 						<c:out value="${q.kategoria_id}" />
 					</a>
 				</td>
+				<td><c:out value="${q.nazwa}" /></td>
+				<td><c:out value="${q.opis}" /></td>
 				<td>
-						<a href="<spring:url value="/kategorie/remove/${q.kategoria_id}.html" />" class="btn btn-danger triggerRemove" data-toggle="modal" data-target="#modalRemove">
+						<a href="<spring:url value="/kategoria-remove/${q.kategoria_id}.html" />" class="btn btn-danger triggerRemove" data-toggle="modal" data-target="#modalRemove">
 							Usuń
 						</a>
 				</td>

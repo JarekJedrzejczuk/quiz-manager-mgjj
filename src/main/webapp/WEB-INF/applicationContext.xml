@@ -23,11 +23,12 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
-  	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:comp/env/jdbc/MySQLDS" />	
-<!--	<property name="jndiName" value="jdbc/MySQLDS" />	 -->	
+  	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/qm2?characterEncoding=UTF-8" />
+		<property name="password" value="Trawniki4" />	
+		<property name="username" value="root" />	
 	</bean>
-
 	<bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 		id="entityManagerFactory">
 		<property name="packagesToScan" value="pl.agh.jj.jba.entities" />
