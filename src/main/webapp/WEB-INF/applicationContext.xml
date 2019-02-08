@@ -33,7 +33,7 @@
 <!-- 	</bean> -->
   	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.postgresql.Driver"/>
-		<property name="url" value="jdbc:postgresql://ec2-176-34-113-195.eu-west-1.compute.amazonaws.com:5432/d6s6gdhp93otfg?characterEncoding=UTF-8" />
+		<property name="url" value="jdbc:postgresql://ec2-176-34-113-195.eu-west-1.compute.amazonaws.com:5432/d6s6gdhp93otfg" />
 		<property name="password" value="gpqfjysbbqdlif" />	
 		<property name="username" value="971f748e5d050f0e27188a7e1b5f889a1cf0ac894b9307891a3ef9f1a1c61972" />	
 	</bean>
