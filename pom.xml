@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<properties>
-		<org.springframework.version>4.0.5.RELEASE</org.springframework.version>
+		<org.springframework.version>4.3.16.RELEASE</org.springframework.version>
 		<apache.tiles>3.0.4</apache.tiles>
 		<spring.security.version>3.2.3.RELEASE</spring.security.version>
 	</properties>
